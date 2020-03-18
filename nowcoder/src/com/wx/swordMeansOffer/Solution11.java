@@ -1,5 +1,8 @@
 package com.wx.swordMeansOffer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
  */
@@ -49,5 +52,8 @@ public class Solution11 {
 
     public static void main(String[] args) {
         System.out.println(NumberOf1(-8));
+
+        Map<Integer,Integer> map = new HashMap<>();
+        map.put(1,1);
     }
 }
