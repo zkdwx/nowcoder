@@ -19,38 +19,15 @@ public class Solution3 {
     }
 
     private static int minRoadDeng(int n, String s) {  //n=s.length()
-        if (n == 2 && s.contains(".")) return 1;
+        int i = 0;
         int res = 0;
-        if (n == 1) {
-            if (s.equals(".")) return 1;
-            if (s.equals("X")) return 0;
-        }
-        boolean[] b = new boolean[n];
-        for (int i = 0; i < n; i++) {
-            if (s.charAt(i) == 'X') b[i] = true;
-        }
-        for (int i = 1; i < n - 1; i++) {
-            if (s.charAt(i - 1) == '.' && s.charAt(i) == '.' && s.charAt(i + 1) == '.') {
-                b[i - 1] = true;
-                b[i] = true;
-                b[i + 1] = true;
+        while (i < n) {
+            if (s.charAt(i) == '.') {
                 res++;
+                i += 3;
             }
-        }
-        for (int i = 1; i < n - 1; i++) {
-            if (s.charAt(i - 1) == '.' && s.charAt(i) == 'X' && s.charAt(i + 1) == '.'
-                    && b[i - 1] == false && b[i + 1] == false) {
-                b[i - 1] = true;
-                b[i] = true;
-                b[i + 1] = true;
-                res++;
-            }
-        }
-        for (int i = 1; i < n; i++) {
-            if (s.charAt(i) == '.' && b[i] == false) {
-                b[i] = true;
-                res++;
-            }
+            if (i < n && s.charAt(i) == 'X')
+                i++;
         }
         return res;
     }
