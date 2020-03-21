@@ -1,4 +1,7 @@
 package com.wx.schoolRecruitmentFor2019;
+/**
+ * 迷路的牛牛
+ */
 
 import java.util.Scanner;
 
