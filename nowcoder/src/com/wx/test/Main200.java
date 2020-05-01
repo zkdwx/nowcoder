@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class Main2 {
+public class Main200 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();       //乘客数量
@@ -38,17 +38,7 @@ public class Main2 {
             sum += x;
         }
         System.out.println(sum);
-        int[] arrr = new int[n-sum];
-        int p=0;
-        for (int i = 0; i < arr.length; i++) {
-            if (res[i]==0){
-               arrr[p++]=arr[i];
-            }
-        }
-
-
     }
-
 
 
 }
