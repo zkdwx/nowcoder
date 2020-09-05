@@ -13,7 +13,7 @@ public class NC93 {
         for (int i = 0; i < operators.length; i++) {
             int[] arr = operators[i];
             if (arr[0] == 1) {
-                if (list.size() <= k) {
+                if (list.size() < k) {
                     list.add(0, arr[1]);
                 } else {
                     list.add(0, arr[1]);
@@ -22,12 +22,12 @@ public class NC93 {
                 map.put(arr[1], arr[2]);
             }
             if (arr[0] == 2) {
-                Integer tmp = map.get(arr[1]);
-                if (tmp == null) {
+                if (!list.contains(arr[1])) {
                     result.add(-1);
                 } else {
+                    int tmp = map.get(arr[1]);
                     result.add(tmp);
-                    if (list.size() <= k) {
+                    if (list.size() < k) {
                         list.add(0, arr[1]);
                     } else {
                         list.add(0, arr[1]);
@@ -41,5 +41,13 @@ public class NC93 {
             array[i] = result.get(i);
         }
         return array;
+    }
+
+    public static void main(String[] args) {
+        NC93 nc93 = new NC93();
+        int[][] operators = {{1, 1, 1}, {1, 2, 2}, {1, 3, 2}, {2, 1}, {1, 4, 4}, {2, 2}};
+        int k = 3;
+        int[] lru = nc93.LRU(operators, 3);
+        System.out.println(Arrays.stream(lru).count());
     }
 }
