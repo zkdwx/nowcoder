@@ -1,16 +1,5 @@
 package com.wx.classical_code;
 
-/**
- * 求平方根
- * 题目描述
- * 实现函数 int sqrt(int x).
- * 计算并返回x的平方根
- * 示例1
- * 输入
- * 2
- * 输出
- * 1
- */
 public class NC32 {
     public int sqrt(int x) {
         if (x == 0) return 0;
