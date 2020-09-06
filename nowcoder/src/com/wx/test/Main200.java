@@ -40,5 +40,9 @@ public class Main200 {
         System.out.println(sum);
     }
 
+    private void test(){
+        System.out.println("888888888");
+    }
+
 
 }
